@@ -11,16 +11,19 @@ public class OrdersPage {
     @FindBy(className = "user-link")
     private WebElement userNameLink;
 
-    public OrdersPage(WebDriver driver){
+    public OrdersPage(WebDriver driver) {
+
         PageFactory.initElements(driver, this);
     }
 
-    public boolean isPageOpened(){
-        return userHeader.getText().toString().contains("Dane kupującego");
+
+    public boolean isPageOpened() {
+        return userHeader.getText().contains("Dane kupującego");
     }
 
     public boolean isUserCorrect() {
-        return userNameLink.getText().toString().contains("JASMIN HANNULA");
+        return userNameLink.getText().contains("JASMIN HANNULA");
     }
+
 
 }

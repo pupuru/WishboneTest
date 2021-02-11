@@ -13,12 +13,12 @@ public class SignInTest {
     WebDriver driver;
 
     @BeforeTest
-    public void setup(){
+    public void setup() {
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
-    @Test (priority=1)
+    @Test(priority = 1)
     // Checks invalid sign in messages
     public void signInInvalidMsgs() {
         SignInPage signInPage = new SignInPage(driver);
@@ -29,7 +29,7 @@ public class SignInTest {
         Assert.assertTrue(signInPage.isErrorMsgEmailRequired());
     }
 
-    @Test (priority=2)
+    @Test(priority = 2)
     // Checks if nonexistent user can't login
     public void signInInvalidUser() {
         SignInPage signInPage = new SignInPage(driver);
@@ -42,7 +42,7 @@ public class SignInTest {
         Assert.assertTrue(signInPage.isUserFieldRed());
     }
 
-    @Test (priority=3)
+    @Test(priority = 3)
     // Checks valid sign in happy path
     public void signIn() {
         SignInPage signInPage = new SignInPage(driver);
@@ -57,7 +57,7 @@ public class SignInTest {
     }
 
     @AfterTest
-    public void close(){
+    public void close() {
 
         driver.close();
     }

@@ -7,16 +7,16 @@ import org.openqa.selenium.support.PageFactory;
 
 public class SignInPageAfterRegistration {
 
-    @FindBy (className = "success")
+    @FindBy(className = "success")
     private WebElement successMessage;
 
 
-    public SignInPageAfterRegistration(WebDriver driver){
+    public SignInPageAfterRegistration(WebDriver driver) {
         PageFactory.initElements(driver, this);
     }
 
     public boolean isSuccessMessageDisplayed() {
-        return successMessage.getText().toString().contains("Twoje konto zostało założone. Aby je aktywować, kliknij link w wiadomości e-mail.");
+        return successMessage.getText().contains("Twoje konto zostało założone. Aby je aktywować, kliknij link w wiadomości e-mail.");
     }
 
 }

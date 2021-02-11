@@ -15,7 +15,7 @@ public class SignUpTest {
     WebDriver driver;
 
     @BeforeTest
-    public void setup(){
+    public void setup() {
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
@@ -38,7 +38,7 @@ public class SignUpTest {
     }
 
     @AfterTest
-    public void close(){
+    public void close() {
         driver.close();
     }
 }

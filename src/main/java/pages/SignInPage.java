@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class SignInPage {
-    private static String PAGE_URL="https://www.wishbone.pl/konto/logowanie";
+    private static String PAGE_URL = "https://www.wishbone.pl/konto/logowanie";
 
     @FindBy(tagName = "h2")
     private WebElement loginHeader;
@@ -26,57 +26,57 @@ public class SignInPage {
     private WebElement userErrorRedBox;
     @FindBy(xpath = "//*[@id=\"accWrapper\"]/div/div/form/div/fieldset[2]")
     private WebElement passwordErrorRedBox;
-    @FindBy (className = "success")
+    @FindBy(className = "success")
     private WebElement successMessage;
 
 
-    public SignInPage(WebDriver driver){
+    public SignInPage(WebDriver driver) {
         driver.get(PAGE_URL);
         PageFactory.initElements(driver, this);
     }
 
-    public boolean isPageOpened(){
-        return loginHeader.getText().toString().contains("Zaloguj się");
+    public boolean isPageOpened() {
+
+        return loginHeader.getText().contains("Zaloguj się");
     }
 
     public boolean isErrorMsgInvalidEmail() {
-        return emailErrorMessage.getText().toString().contains("Niepoprawny adres email");
+
+        return emailErrorMessage.getText().contains("Niepoprawny adres email");
     }
 
     public boolean isErrorMsgEmailRequired() {
-        return emailErrorMessage.getText().toString().contains("To pole jest wymagane");
+
+        return emailErrorMessage.getText().contains("To pole jest wymagane");
     }
 
     public boolean isErrorMsgInvalidPassword() {
-        return passwordErrorMessage.getText().toString().contains("Niepoprawne hasło. Min. 6 znaków");
-    }
 
-    public boolean isSuccessMessageDisplayed() {
-        return successMessage.getText().toString().contains("Twoje konto zostało założone. Aby je aktywować, kliknij link w wiadomości e-mail.");
+        return passwordErrorMessage.getText().contains("Niepoprawne hasło. Min. 6 znaków");
     }
-
 
     public boolean isPasswordFieldRed() {
+
         return passwordErrorRedBox.isDisplayed();
     }
 
     public boolean isUserFieldRed() {
+
         return userErrorRedBox.isDisplayed();
     }
 
-    public void setEmail(String email){
+    public void setEmail(String email) {
         emailField.clear();
         emailField.sendKeys(email);
     }
 
-    public void setPassword(String password){
+    public void setPassword(String password) {
         passwordField.clear();
         passwordField.sendKeys(password);
     }
 
-    public void clickSignInButton(){
+    public void clickSignInButton() {
 
         signInButton.click();
-
     }
 }
