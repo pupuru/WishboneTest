@@ -52,8 +52,9 @@ public class SignInTest {
         signInPage.setEmail("jasminhannula@jourrapide.com");
         signInPage.setPassword("qwerty1234");
         signInPage.clickSignInButton();
-        Assert.assertTrue(ordersPage.isPageOpened());
-        Assert.assertTrue(ordersPage.isUserCorrect());
+        Assert.assertTrue(ordersPage.isOrdersPageOpened());
+        Assert.assertTrue(ordersPage.IsUserProfileNameCorrect());
+        Assert.assertTrue(ordersPage.IsUseEmailDataCorrect());
     }
 
     @AfterTest

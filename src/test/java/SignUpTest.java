@@ -28,9 +28,9 @@ public class SignUpTest {
         UUID uuid = UUID.randomUUID();
 
         Assert.assertTrue(signUpPage.isPageOpened());
-        signUpPage.setName("Hannah");
-        signUpPage.setLastName("Jasmin");
-        signUpPage.setEmail("jasminhannula+" + uuid + "@jourrapide.com");
+        signUpPage.setName("Sirja");
+        signUpPage.setLastName("Kettunen");
+        signUpPage.setEmail("SirjaKettunen+" + uuid + "@rhyta.com");
         signUpPage.setPassword("qwerty1234");
         signUpPage.clickCheckbox();
         signUpPage.clickSignUpButton();

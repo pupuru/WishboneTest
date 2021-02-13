@@ -40,11 +40,6 @@ public class SignInPage {
         return loginHeader.getText().contains("Zaloguj się");
     }
 
-    public boolean isErrorMsgInvalidEmail() {
-
-        return emailErrorMessage.getText().contains("Niepoprawny adres email");
-    }
-
     public boolean isErrorMsgEmailRequired() {
 
         return emailErrorMessage.getText().contains("To pole jest wymagane");
